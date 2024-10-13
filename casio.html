@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><p>&nbsp;</p><h1><a name="operation-guide-for-casio-3294-module" class="md-header-anchor"></a><span>Operation Guide for Casio 3294 Module</span></h1><p><span>As found in the popular Casio B640W Vintage watch</span></p><h3><a name="about-this-manual" class="md-header-anchor"></a><span>About This Manual</span></h3><p><span>Depending on the model of your watch, display text appears either as dark ﬁ gures on a light background or light ﬁ gures on a dark background. All sample displays in this manual are shown using dark ﬁgures on a light background.  Note that the product illustrations in this manual are intended for reference only, and so the actual product may appear somewhat different than depicted by an illustration.</span></p><p><span>Button operations are indicated using the letters shown in the illustration.</span></p><p><span>Each section of this manual provides you with the information you need to perform operations in each  mode. Further details and technical information can be found in the “Reference” section.</span></p><p>&nbsp;</p><h3><a name="general-guide" class="md-header-anchor"></a><span>General Guide</span></h3><p><span>Press  (C)  to change from mode to mode.</span></p><p><img src="/Users/admin/Desktop/Screen Shot 2024-10-13 at 22.57.03.png" referrerpolicy="no-referrer" alt="Screen Shot 2024-10-13 at 22.57.03"></p><p>&nbsp;</p><p><span>After operations in any mode (C) returns to the Timekeeping Mode.</span></p><p><span>Press (B) in any mode to illuminate the display for about two secondsUse the Timekeeping Mode to set and view the current time and date.</span></p><p><span>To set the time and date, </span></p><ol start='' ><li><span>In the Timekeeping Mode, press (A) The seconds digits will start to ﬂ ash, which indicates the setting screen. </span></li><li><span>Press (C) to move the ﬂ ashing in the sequence shown below to select other settings</span></li></ol><p>&nbsp;</p><p><img src="/Users/admin/Desktop/Screen Shot 2024-10-13 at 23.00.39.png" referrerpolicy="no-referrer" alt="Screen Shot 2024-10-13 at 23.00.39"></p><p>&nbsp;</p><ol start='3' ><li><span>When the setting you want to change is ﬂashing, press (D) to change it as described below.</span></li></ol><figure><table><thead><tr><th><span>To change this setting</span></th><th><span>Perform this button operation</span></th></tr></thead><tbody><tr><td><span>Seconds</span></td><td><span>Press (D) to reset to 00.</span></td></tr><tr><td><span>Hour, Minutes, Year, Month, Day</span></td><td><span>Press (D) to increase the setting.</span></td></tr></tbody></table></figure><ul><li><span>Pressing  (D) while the seconds are in the range of 30 to 59 resets them to 00 and adds 1 to the minutes. In the range of 00 to 29, the minutes are unchanged.</span></li><li><span>To toggle between the 12-hour and 24-hour formats, press (B) while some digits are ﬂashing.</span></li></ul><ol start='4' ><li><p><span>Press (A) to exit the setting screen.</span></p><ul><li><span>The day of the week is automatically displayed in accordance with the date (year, month, and day) settings.</span></li><li><span>The year can be set in the range of 2000 to 2099</span></li></ul></li></ol><ul><li><span>The watch’s built-in full automatic calendar automatically makes allowances for different month lengths and leap years. Once you set the date, there should be no reason to change it except after you have the watch’s battery replaced.</span></li><li><span>With the 12-hour format, the PM indicator appears for times in the range of noon  to 11:59 p.m. and no indicator appears for times in the range of midnight to 11:59 a.m.</span></li><li><span>With the 24-hour format, times are displayed in the range of 0:00 to 23:59, with the 24H indicator.</span></li><li><span>The 12-hour/24-hour timekeeping format you select in the Timekeeping Mode is applied in all other modes</span></li></ul><h3><a name="backlight" class="md-header-anchor"></a><span>Backlight</span></h3><p><span>When you switch the backlight function on, the backlight of the watch ﬂashes whenever Alarm, Hourly Time Signal or Countdown Timer is sounding.</span></p><ul><li><span>Pressing B at any time illuminates the display, regardless of the backlight’s on/off setting.</span></li><li><span>To switch the backlight function on and off: In the Timekeeping Mode, hold down (D) for about two seconds to switch the backlight function on and off. When you switch the backlight function on, an indicator appears on above the second-digits</span></li><li><span>The backlight function on indicator remains on the display in all modes until you switch the backlight function off.</span></li><li><span>The above operation controls operation of the backlight function only. It does not affect operation of audible tones and signals.</span></li><li><span>Frequent use of the backlight shortens the battery life.</span></li></ul><h3><a name="alarm" class="md-header-anchor"></a><span>Alarm</span></h3><p><img src="/Users/admin/Desktop/Screen Shot 2024-10-13 at 23.14.48.png" referrerpolicy="no-referrer" alt="Screen Shot 2024-10-13 at 23.14.48"></p><p><span>The multi-function alarm lets you specify the hour, minutes, month, and day for the alarm (page E-14). When the alarm is on, the alarm sounds for 20 seconds at the preset time. When the Hourly Time Signal is on, the watch beeps every hour on the hour.</span></p><p><span>The alarm and the Hourly Time Signal sound in all modes.  An alarm setting (and an Hourly Time Signal setting) is available in the Alarm Mode, which you enter by pressing (C)</span></p><p>&nbsp;</p><figure><table><thead><tr><th><span>Alarm Type</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td><span>Daily</span></td><td><span>Set the hour and minutes for the alarm time. This type of setting causes the alarm to sound everyday at the time you set.</span></td></tr><tr><td><span>Date</span></td><td><span>Set the month, day, hour and minutes for the alarm time. This type of setting causes the alarm to sound at the speciﬁc time, on the speciﬁc date you set.</span></td></tr><tr><td><span>1 Month</span></td><td><span>Set the month, hour and minutes for the alarm time. This type of setting causes the alarm to sound everyday at the time you set, only during the month you set.</span></td></tr><tr><td><span>Monthly</span></td><td><span>Set the day, hour and minutes for the alarm time. This type of setting causes the</span></td></tr></tbody></table></figure><h5><a name="to-set-the-alarm-time" class="md-header-anchor"></a><span>To set the alarm time</span></h5><ol start='' ><li><p><span>In the Alarm Mode, press (A) The hour digits of the alarm time will start to ﬂash, which indicates the setting screen.This operation automatically turns on the alarm.</span></p></li><li><p><span>Press (C) to move the ﬂ ashing in the sequence shown below to select other settings.</span></p></li><li><p><span>While a setting is ﬂashing, press (D) to increase it.</span></p><ul><li><span>To set an alarm that does not include a month (Daily alarm, Monthly alarm), set </span><strong><span>-</span></strong><span> for the month. Press (D) until the  mark appears (between </span><strong><span>12</span></strong><span> and </span><strong><span>:</span></strong><span> ) while month setting is ﬂashing</span></li><li><span>To set an alarm that does not include a day (Daily alarm, 1-Month alarm), set </span><strong><span>--</span></strong><span> for the day. Press (D) until the  </span><strong><span>--</span></strong><span>  mark appears (between the end of the month and </span><strong><span>1</span></strong><span>) while the day setting is ﬂashing.</span></li><li><span>When setting the alarm time using the 12-hour format, take care to set the time correctly as a.m. or p.m. (PM indicator).</span></li></ul></li><li><p><span>Press (A) to exit the setting screen.</span></p></li></ol><h5><a name="to-stop-the-alarm" class="md-header-anchor"></a><span>To stop the alarm</span></h5><p><span>Press any button to stop the alarm after it starts to sound.</span></p><h5><a name="to-switch-an-alarm-and-hourly-time-signal-on-and-off" class="md-header-anchor"></a><span>To switch an alarm and Hourly Time Signal on and off</span></h5><p><span>Press (D) while in the Alarm Mode to change the status of an alarm and Hourly Time Signal in the sequence shown below.</span></p><p><img src="/Users/admin/Desktop/Screen Shot 2024-10-13 at 23.31.14.png" referrerpolicy="no-referrer" alt="Screen Shot 2024-10-13 at 23.31.14"></p><p><span>The alarm on indicator and the Hourly Time Signal on indicator are shown on the display in all modes while these functions are turned on</span></p><p>&nbsp;</p><h3><a name="countdown-timer" class="md-header-anchor"></a><span>Countdown Timer</span></h3><p><span>The countdown timer can be set within a range of 1 second to 24 hours. When the countdown reaches zero, an alarm sounds for 10 seconds or until you press any button.</span></p><ul><li><span>You can also select auto-repeat, which automatically restarts the countdown from the original value you set whenever zero is reached.</span></li><li><span>Countdown timer functions are available in the Countdown Timer Mode, enter by pressing (C)</span></li></ul><h5><a name="to-set-the-countdown-start-time" class="md-header-anchor"></a><span>To set the countdown start time</span></h5><ol start='' ><li><p><span>In the Countdown Timer Mode, press (A) The hours digits of the countdown start time will start to ﬂ ash, which indicates the setting screen.</span></p></li><li><p><span>Press (C) to move the ﬂashing in the sequence shown below to select other settings.</span></p></li><li><p><span>While a setting is ﬂ ashing, press (D) to increase it.</span></p><ul><li><span>To set the starting value of the countdown time to 24 hours, set  x 0:00&#39; 00.</span></li></ul></li><li><p><span>Press (A) to exit the setting screen</span></p></li></ol></div>
+</body>
+</html>
