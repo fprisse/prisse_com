@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcGIS Embedded Map</title>
+  <script type="module" src="https://js.arcgis.com/4.34/embeddable-components/"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    arcgis-embedded-map {
+      display: block;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <arcgis-embedded-map 
+    item-id="bc34b7504f814f4c88981b820021bfaf" 
+    theme="dark" 
+    center="13.3398,50.52838799999999" 
+    scale="73957190.948944" 
+    portal-url="https://www.arcgis.com">
+  </arcgis-embedded-map>
+</body>
+</html>
