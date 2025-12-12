@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orthophoto Viewer</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    iframe {
+      display: block;
+      height: 100vh;
+      width: 100vw;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    src="https://fsn1.your-objectstorage.com/hwh-ortho/AUX/viewer/index.html?flight=HRL&year=Actueel&style=RGB&label=1&x=155000&y=463000&z=3&r=0"
+    allow="geolocation"
+    loading="lazy">
+  </iframe>
+</body>
+</html>
